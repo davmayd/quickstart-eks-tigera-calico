@@ -22,7 +22,7 @@ Resources:
   InstallationCRD:
     Type: "Custom::KubeManifest"
     Properties:
-      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:EKS-QuickStart-KubeManifest-${KubeClusterName}"
+      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:eks-quickstart-KubeManifest-${KubeClusterName}"
       ClusterName: !Ref KubeClusterName
       Manifest:
         apiVersion: apiextensions.k8s.io/v1
@@ -367,7 +367,7 @@ Resources:
   TigeraStatusCRD:
     Type: "Custom::KubeManifest"
     Properties:
-      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:EKS-QuickStart-KubeManifest-${KubeClusterName}"
+      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:eks-quickstart-KubeManifest-${KubeClusterName}"
       ClusterName: !Ref KubeClusterName
       Manifest:
         apiVersion: apiextensions.k8s.io/v1
@@ -472,7 +472,7 @@ Resources:
   TigeraOperatorClusterRole:
     Type: "Custom::KubeManifest"
     Properties:
-      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:EKS-QuickStart-KubeManifest-${KubeClusterName}"
+      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:eks-quickstart-KubeManifest-${KubeClusterName}"
       ClusterName: !Ref KubeClusterName
       Manifest:
         apiVersion: rbac.authorization.k8s.io/v1
@@ -630,7 +630,7 @@ Resources:
   TigeraOperatorNamespace:
     Type: "Custom::KubeManifest"
     Properties:
-      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:EKS-QuickStart-KubeManifest-${KubeClusterName}"
+      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:eks-quickstart-KubeManifest-${KubeClusterName}"
       ClusterName: !Ref KubeClusterName
       Manifest:
         apiVersion: v1
@@ -644,7 +644,7 @@ Resources:
     Type: "Custom::KubeManifest"
     DependsOn: TigeraOperatorNamespace
     Properties:
-      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:EKS-QuickStart-KubeManifest-${KubeClusterName}"
+      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:eks-quickstart-KubeManifest-${KubeClusterName}"
       ClusterName: !Ref KubeClusterName
       Manifest:
         apiVersion: v1
@@ -656,7 +656,7 @@ Resources:
   TigeraOperatorClusterRoleBinding:
     Type: "Custom::KubeManifest"
     Properties:
-      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:EKS-QuickStart-KubeManifest-${KubeClusterName}"
+      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:eks-quickstart-KubeManifest-${KubeClusterName}"
       ClusterName: !Ref KubeClusterName
       Manifest:
         kind: ClusterRoleBinding
@@ -676,7 +676,7 @@ Resources:
     Type: "Custom::KubeManifest"
     DependsOn: TigeraOperatorNamespace
     Properties:
-      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:EKS-QuickStart-KubeManifest-${KubeClusterName}"
+      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:eks-quickstart-KubeManifest-${KubeClusterName}"
       ClusterName: !Ref KubeClusterName
       Manifest:
         apiVersion: apps/v1
