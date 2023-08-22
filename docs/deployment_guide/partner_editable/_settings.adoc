@@ -1,11 +1,11 @@
 :partner-solution-project-name: quickstart-eks-tigera-calico
 :partner-solution-github-org: aws-quickstart
-:partner-product-name: Tigera Calico on the AWS Cloud
+:partner-product-name: Tigera Calico
 :partner-product-short-name: Calico
 :partner-company-name: Tigera
 :doc-month: August
 :doc-year: 2023
-:partner-contributors: Casey Davenport, {partner-company-name}
+// :partner-contributors: Casey Davenport, {partner-company-name}
 // :other-contributors: Akua Mansa, Trek10
 :aws-contributors: Janine Singh, AWS IoT Partner team
 :aws-ia-contributors: Troy Ameigh, AWS Integration & Automation team
