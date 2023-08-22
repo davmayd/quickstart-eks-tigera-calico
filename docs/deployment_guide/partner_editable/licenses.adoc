@@ -1,3 +1,19 @@
 // Include details about any licenses and how to sign up. Provide links as appropriate.
 
+{partner-product-short-name} binaries are provided for free under the Apache 2.0 license. To enable https://bit.ly/3jHVKCi[Calico Enterprise Features^], follow the steps below to get your free trial to access Calico Enterprise and run it directly on your EKS cluster.
+
+- To register for a free trial, refer to https://auth.calicocloud.io/u/signup/identifier?state=hKFo2SBQYWs5WlBfR3VuWG91WXRCNWJhY3J2QnNRdU5pal9Jc6Fur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHc0b2I0dmtiRG9JdnpNc3JrQTNQcnlvTDduTEFNYzBZo2NpZNkgc3NJQkNFdEdkZFpLNlVubDNOYWl2ZzhrY2RmcWd6dFE[Create Your Account^].
+
+- Complete your contact details along with your work email address to ensure you receive your trial environment details promptly.
+
+- Select Amazon EKS as your Kubernetes distro.
+
+- For the Promo Code, use **PAR-AWS-EKS-QUICKSTART**. It's critical that you use this code as it's used to automatically approve trial requests for this Partner Solution.
+
+- Review and accept the terms of service and choose START YOUR TRIAL.
+
+- The Tigera team provisions your environment and sends you an email with the details you need. This is currently a manual process and can take up to half an hour during business hours M—F 9 am—5 pm PST. Requests received during non-business hours are provisioned on the next business day.
+
+- Once you receive the email titled "Your Calico Enterprise Trial Credentials" from cet@tigera.io (make sure it's not going to your spam folder), you're supplied with a single command to run against your EKS cluster that you launch using this Partner Solution. This command automaticallys installs the required Calico Enterprise components on your EKS cluster so you can use a dedicated management portal to manage this cluster.
+
 There is no cost to use this Partner Solution, but you will be billed for any AWS services or resources that this Partner Solution deploys. For more information, refer to the https://fwd.aws/rA69w?[AWS Partner Solution General Information Guide^].
