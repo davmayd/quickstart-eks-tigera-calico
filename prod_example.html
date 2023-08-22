@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
-<meta name="description" content="Tigera Calico on the AWS Cloud Deployment Guide on AWS">
-<meta name="keywords" content="Partner Solution, AWS, Tigera Calico on the AWS Cloud">
-<title>Tigera Calico on the AWS Cloud on AWS</title>
+<meta name="description" content="Tigera Calico Deployment Guide on AWS">
+<meta name="keywords" content="Partner Solution, AWS, Tigera Calico">
+<title>Tigera Calico on AWS</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
@@ -864,7 +864,11 @@ p.footer-text a{color:#d7d8d8}
 </ul>
 </li>
 <li><a href="#_deployment_steps">Deployment steps</a></li>
-<li><a href="#_postdeployment_steps">Postdeployment steps</a></li>
+<li><a href="#_postdeployment_steps">Postdeployment steps</a>
+<ul class="sectlevel2">
+<li><a href="#_test_the_deployment">Test the deployment</a></li>
+</ul>
+</li>
 <li><a href="#_troubleshooting">Troubleshooting</a></li>
 <li><a href="#_customer_responsibility">Customer responsibility</a></li>
 <li><a href="#_feedback">Feedback</a></li>
@@ -875,7 +879,7 @@ p.footer-text a{color:#d7d8d8}
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<h2 id="_tigera_calico_on_the_aws_cloud_on_aws" class="discrete text-center">Tigera Calico on the AWS Cloud on AWS</h2>
+<h2 id="_tigera_calico_on_aws" class="discrete text-center">Tigera Calico on AWS</h2>
 <h2 id="_partner_solution_deployment_guide" class="discrete text-left text-center">Partner Solution Deployment Guide</h2>
 <div class="imageblock text-center">
 <div class="content">
@@ -884,7 +888,6 @@ p.footer-text a{color:#d7d8d8}
 </div>
 <div class="paragraph text-center">
 <p><strong>August 2023</strong><br>
-<em>Casey Davenport, Tigera</em><br>
 <em>Janine Singh, AWS IoT Partner team</em><br>
 <em>Troy Ameigh, AWS Integration &amp; Automation team</em><br></p>
 </div>
@@ -914,10 +917,7 @@ Refer to the <a href="https://github.com/aws-quickstart/quickstart-eks-tigera-ca
 <h2 id="_overview">Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This guide covers the information you need to deploy the Tigera Calico on the AWS Cloud Partner Solution in the AWS Cloud. It&#8217;s for users who want to use Calico to provide network-policy enforcement on Amazon Elastic Kubernetes Service (Amazon EKS) clusters. This provides a rich network-policy model that lets you limit communications to only the traffic flows you want. Clusters deployed by this Partner Solution can be upgraded for enterprise-grade security and compliance use cases.</p>
-</div>
-<div class="paragraph">
-<p>This Amazon Web Services (AWS) Partner Solution deploys [&lt;product name&gt;](&lt;partner&#8217;s marketing product page&gt;) in the AWS Cloud so that &lt;purpose&gt;. This solution is for &lt;target users&gt; who want to &lt;do what&gt; so that &lt;why&gt;. For more information, refer to the [&lt;product name&gt; documentation](&lt;URL&gt;).</p>
+<p>This guide covers the information you need to deploy the Tigera Calico Partner Solution in the AWS Cloud. It&#8217;s for users who want to use Calico to provide network-policy enforcement on Amazon Elastic Kubernetes Service (Amazon EKS) clusters. This provides a rich network-policy model that lets you limit communications to only the traffic flows you want. Clusters deployed by this Partner Solution can be upgraded for enterprise-grade security and compliance use cases.</p>
 </div>
 </div>
 </div>
@@ -927,8 +927,8 @@ Refer to the <a href="https://github.com/aws-quickstart/quickstart-eks-tigera-ca
 <div class="paragraph">
 <p>Calico binaries are provided for free under the Apache 2.0 license. To enable <a href="https://bit.ly/3jHVKCi" target="_blank" rel="noopener">Calico Enterprise Features</a>, follow the steps below to get your free trial to access Calico Enterprise and run it directly on your EKS cluster.</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>To register for a free trial, refer to <a href="https://auth.calicocloud.io/u/signup/identifier?state=hKFo2SBQYWs5WlBfR3VuWG91WXRCNWJhY3J2QnNRdU5pal9Jc6Fur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHc0b2I0dmtiRG9JdnpNc3JrQTNQcnlvTDduTEFNYzBZo2NpZNkgc3NJQkNFdEdkZFpLNlVubDNOYWl2ZzhrY2RmcWd6dFE" target="_blank" rel="noopener">Create Your Account</a>.</p>
 </li>
@@ -945,12 +945,12 @@ Refer to the <a href="https://github.com/aws-quickstart/quickstart-eks-tigera-ca
 <p>Review and accept the terms of service and choose START YOUR TRIAL.</p>
 </li>
 <li>
-<p>The Tigera team provisions your environment and sends you an email with the details you need. This is currently a manual process and can take up to half an hour during business hours M—F 9 am—5 pm PST. Requests received during non-business hours are provisioned on the next business day.</p>
+<p>The Tigera team provisions your environment and sends you an email with the details you need. This is currently a manual process and can take up to half an hour during business hours M–F 9:00 am–5:00 pm PST. Requests received during non-business hours are provisioned on the next business day.</p>
 </li>
 <li>
-<p>Once you receive the email titled "Your Calico Enterprise Trial Credentials" from <a href="mailto:cet@tigera.io">cet@tigera.io</a> (make sure it&#8217;s not going to your spam folder), you&#8217;re supplied with a single command to run against your EKS cluster that you launch using this Partner Solution. This command automaticallys installs the required Calico Enterprise components on your EKS cluster so you can use a dedicated management portal to manage this cluster.</p>
+<p>Once you receive the email titled "Your Calico Enterprise Trial Credentials" from <a href="mailto:cet@tigera.io">cet@tigera.io</a> (make sure it&#8217;s not going to your spam folder), you&#8217;re supplied with a single command to run against your EKS cluster that you launch using this Partner Solution. This command automatically installs the required Calico Enterprise components on your EKS cluster so you can use a dedicated management portal to manage this cluster.</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
 <p>There is no cost to use this Partner Solution, but you will be billed for any AWS services or resources that this Partner Solution deploys. For more information, refer to the <a href="https://fwd.aws/rA69w?" target="_blank" rel="noopener">AWS Partner Solution General Information Guide</a>.</p>
@@ -1107,7 +1107,7 @@ Unless you&#8217;re customizing the Partner Solution templates or are instructed
 <p>Choose <strong>Create stack</strong>. The stack takes about 5–30 minutes to deploy.</p>
 </li>
 <li>
-<p>Monitor the stack&#8217;s status, and when the status is <strong>CREATE_COMPLETE</strong>, the Tigera Calico on the AWS Cloud deployment is ready.</p>
+<p>Monitor the stack&#8217;s status, and when the status is <strong>CREATE_COMPLETE</strong>, the Tigera Calico deployment is ready.</p>
 </li>
 <li>
 <p>To view the created resources, choose the <strong>Outputs</strong> tab.</p>
@@ -1119,9 +1119,8 @@ Unless you&#8217;re customizing the Partner Solution templates or are instructed
 <div class="sect1">
 <h2 id="_postdeployment_steps">Postdeployment steps</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>==+ Test the deployment</p>
-</div>
+<div class="sect2">
+<h3 id="_test_the_deployment">Test the deployment</h3>
 <div class="paragraph">
 <p>Once installed, run the following command to verify that everything is working:</p>
 </div>
@@ -1172,6 +1171,7 @@ For a complete list of enterprise features for Calico, see the <a href="https://
 </td>
 </tr>
 </table>
+</div>
 </div>
 </div>
 </div>
