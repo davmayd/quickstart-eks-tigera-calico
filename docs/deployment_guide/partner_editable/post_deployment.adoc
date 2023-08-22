@@ -1,3 +1,28 @@
 // Include any postdeployment steps here, such as steps necessary to test that the deployment was successful. If there are no postdeployment steps, leave this file empty.
 
 == Postdeployment steps
+=== Test the deployment
+
+Once installed, run the following command to verify that everything is working:
+
+```
+kubectl get tigerastatus
+```
+
+A successful installation has a status of *Available* with *Degraded* and *Progressing* marked as *False*:
+
+```
+NAME     AVAILABLE   PROGRESSING   DEGRADED   SINCE
+calico   True        False         False      1m16s
+```
+
+{partner-product-short-name} is now ready to use. To get started, refer to https://docs.projectcalico.org/security/kubernetes-network-policy[Get started with Kubernetes network policy^].
+
+To enable additional features, refer https://bit.ly/3jHVKCi[Calico Enterprise Features^]. Features that can be enabled include the following:
+
+* Hierarchical network policy
+* FQDN/DNS-based network policy
+* Rich graphical user interface
+* RBAC controls with audit trail and continuous compliance
+
+NOTE: For a complete list of enterprise features for {partner-product-short-name}, see the https://docs.projectcalico.org/calico-enterprise/[Calico Enterprise documentation^].
