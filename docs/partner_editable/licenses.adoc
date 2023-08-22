@@ -1,4 +1,0 @@
-// Include details about the license and how they can sign up. If no license is required, clarify that. 
-
-{partner-product-short-name} binaries are provided for free under the Apache 2.0 license. To enable additional enterprise features, see https://bit.ly/3jHVKCi[Calico Enterprise Features^].
-
